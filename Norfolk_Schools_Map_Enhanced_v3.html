@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_87137313f4af6ffa82e58eb4870e5131 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; background: white; padding: 10px 12px; border: 1px solid #888; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); font-size: 12px;">
+  <div style="font-weight: bold; margin-bottom: 6px;">Map Key</div>
+  <div style="display:flex;align-items:center;margin-bottom:4px;">
+    <div style="width:18px;height:18px;border-radius:50%;background:green;color:white;text-align:center;line-height:18px;margin-right:6px;">F</div>
+    <span>Federation Schools (F1–F5)</span>
+  </div>
+  <div style="display:flex;align-items:center;">
+    <div style="width:18px;height:18px;border-radius:50%;background:blue;color:white;text-align:center;line-height:18px;margin-right:6px;">1</div>
+    <span>Special & Complex Needs (1–n)</span>
+  </div>
+</div>
+    
+            <div class="folium-map" id="map_87137313f4af6ffa82e58eb4870e5131" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_87137313f4af6ffa82e58eb4870e5131 = L.map(
+                "map_87137313f4af6ffa82e58eb4870e5131",
+                {
+                    center: [52.7, 1.25],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 9,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_07594deb928c23c3ba4f90eb320ee5b6 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_87137313f4af6ffa82e58eb4870e5131);
+        
+    
+            var feature_group_de75de45f540ef3f9651aaace2b98ea3 = L.featureGroup(
+                {}
+            ).addTo(map_87137313f4af6ffa82e58eb4870e5131);
+        
+    
+            var marker_ba9ba4b496e71911a0dfef7bc6804cea = L.marker(
+                [52.847, 1.485],
+                {}
+            ).addTo(feature_group_de75de45f540ef3f9651aaace2b98ea3);
+        
+    
+            var div_icon_a3c87c8ee9956349c021febb4348efea = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:green;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #0a0;\"\u003e\n                    F1\n                \u003c/div\u003e\n            "});
+            marker_ba9ba4b496e71911a0dfef7bc6804cea.setIcon(div_icon_a3c87c8ee9956349c021febb4348efea);
+        
+    
+        var popup_b2c112a0fbe8bb5fdd57f1a3ef7f149a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ea4380490779412470615a850addbd8e = $(`<div id="html_ea4380490779412470615a850addbd8e" style="width: 100.0%; height: 100.0%;"><b>Bacton Primary School</b><br>Walcott Road, Bacton, NR12 0EY<br><b>Subtype:</b> Primary &nbsp;|&nbsp; <b>Age:</b> 4–11 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Primary phase within federation.</i></div>`)[0];
+            popup_b2c112a0fbe8bb5fdd57f1a3ef7f149a.setContent(html_ea4380490779412470615a850addbd8e);
+        
+
+        marker_ba9ba4b496e71911a0dfef7bc6804cea.bindPopup(popup_b2c112a0fbe8bb5fdd57f1a3ef7f149a)
+        ;
+
+        
+    
+    
+            marker_ba9ba4b496e71911a0dfef7bc6804cea.bindTooltip(
+                `<div>
+                     F1 • Bacton Primary School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e3bfcf5aad26ee47be8400c8d686e0ab = L.marker(
+                [52.8, 1.34],
+                {}
+            ).addTo(feature_group_de75de45f540ef3f9651aaace2b98ea3);
+        
+    
+            var div_icon_e9ba7a4fdf129eb3494a1462c79d1e66 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:green;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #0a0;\"\u003e\n                    F2\n                \u003c/div\u003e\n            "});
+            marker_e3bfcf5aad26ee47be8400c8d686e0ab.setIcon(div_icon_e9ba7a4fdf129eb3494a1462c79d1e66);
+        
+    
+        var popup_ec5485536ae48127aab8fa79762e9ec5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5d560630a1aa6fa4f65a9d521bbbe19f = $(`<div id="html_5d560630a1aa6fa4f65a9d521bbbe19f" style="width: 100.0%; height: 100.0%;"><b>Swanton Abbott Primary School</b><br>Youngman's Lane, Swanton Abbott, Norwich, NR10 5DZ<br><b>Subtype:</b> Primary &nbsp;|&nbsp; <b>Age:</b> 4–11 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Primary phase within federation.</i></div>`)[0];
+            popup_ec5485536ae48127aab8fa79762e9ec5.setContent(html_5d560630a1aa6fa4f65a9d521bbbe19f);
+        
+
+        marker_e3bfcf5aad26ee47be8400c8d686e0ab.bindPopup(popup_ec5485536ae48127aab8fa79762e9ec5)
+        ;
+
+        
+    
+    
+            marker_e3bfcf5aad26ee47be8400c8d686e0ab.bindTooltip(
+                `<div>
+                     F2 • Swanton Abbott Primary School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d1f9e0d6d6d36a6bef7aaec9e6d2880f = L.marker(
+                [52.871, 1.429],
+                {}
+            ).addTo(feature_group_de75de45f540ef3f9651aaace2b98ea3);
+        
+    
+            var div_icon_671da065dd7e0b80daf6f43226258f8c = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:green;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #0a0;\"\u003e\n                    F3\n                \u003c/div\u003e\n            "});
+            marker_d1f9e0d6d6d36a6bef7aaec9e6d2880f.setIcon(div_icon_671da065dd7e0b80daf6f43226258f8c);
+        
+    
+        var popup_be5ad2d2cdb031b7a90f87aab50dfce2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1b4b48a9eca520cbea200faaee048bf3 = $(`<div id="html_1b4b48a9eca520cbea200faaee048bf3" style="width: 100.0%; height: 100.0%;"><b>Mundesley Infant School</b><br>Trunch Road, Mundesley, Norwich, NR11 8LE<br><b>Subtype:</b> Infant &nbsp;|&nbsp; <b>Age:</b> 4–7 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Infant phase within federation.</i></div>`)[0];
+            popup_be5ad2d2cdb031b7a90f87aab50dfce2.setContent(html_1b4b48a9eca520cbea200faaee048bf3);
+        
+
+        marker_d1f9e0d6d6d36a6bef7aaec9e6d2880f.bindPopup(popup_be5ad2d2cdb031b7a90f87aab50dfce2)
+        ;
+
+        
+    
+    
+            marker_d1f9e0d6d6d36a6bef7aaec9e6d2880f.bindTooltip(
+                `<div>
+                     F3 • Mundesley Infant School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_09f375fa309072c066d261e4ee9d3800 = L.marker(
+                [52.7, 1.5],
+                {}
+            ).addTo(feature_group_de75de45f540ef3f9651aaace2b98ea3);
+        
+    
+            var div_icon_93e69890826030b65261c3bfbd40e9bf = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:green;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #0a0;\"\u003e\n                    F4\n                \u003c/div\u003e\n            "});
+            marker_09f375fa309072c066d261e4ee9d3800.setIcon(div_icon_93e69890826030b65261c3bfbd40e9bf);
+        
+    
+        var popup_2a7803dbdd583ca5cc2a7b4a93bc966e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c28a9163b2e55366c66f3fd9d5d48885 = $(`<div id="html_c28a9163b2e55366c66f3fd9d5d48885" style="width: 100.0%; height: 100.0%;"><b>Horning Primary School</b><br>Lower Street, Horning, Norwich, NR12 8PX<br><b>Subtype:</b> Primary &nbsp;|&nbsp; <b>Age:</b> 4–11 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Primary phase within federation.</i></div>`)[0];
+            popup_2a7803dbdd583ca5cc2a7b4a93bc966e.setContent(html_c28a9163b2e55366c66f3fd9d5d48885);
+        
+
+        marker_09f375fa309072c066d261e4ee9d3800.bindPopup(popup_2a7803dbdd583ca5cc2a7b4a93bc966e)
+        ;
+
+        
+    
+    
+            marker_09f375fa309072c066d261e4ee9d3800.bindTooltip(
+                `<div>
+                     F4 • Horning Primary School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_60032c0a99b9e1b41414a00c49866bb3 = L.marker(
+                [52.63, 1.53],
+                {}
+            ).addTo(feature_group_de75de45f540ef3f9651aaace2b98ea3);
+        
+    
+            var div_icon_6003964926fb9a95bbac2b8a1c31456e = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:green;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #0a0;\"\u003e\n                    F5\n                \u003c/div\u003e\n            "});
+            marker_60032c0a99b9e1b41414a00c49866bb3.setIcon(div_icon_6003964926fb9a95bbac2b8a1c31456e);
+        
+    
+        var popup_654f6fb8a580fa303404af42fdfbfb84 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_443b295882ba1d67bac20f42d91b7b06 = $(`<div id="html_443b295882ba1d67bac20f42d91b7b06" style="width: 100.0%; height: 100.0%;"><b>Freethorpe Primary School</b><br>School Road, Freethorpe, Norwich, NR13 3NZ<br><b>Subtype:</b> Primary &nbsp;|&nbsp; <b>Age:</b> 4–11 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Primary phase within federation.</i></div>`)[0];
+            popup_654f6fb8a580fa303404af42fdfbfb84.setContent(html_443b295882ba1d67bac20f42d91b7b06);
+        
+
+        marker_60032c0a99b9e1b41414a00c49866bb3.bindPopup(popup_654f6fb8a580fa303404af42fdfbfb84)
+        ;
+
+        
+    
+    
+            marker_60032c0a99b9e1b41414a00c49866bb3.bindTooltip(
+                `<div>
+                     F5 • Freethorpe Primary School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_eb12434fb073850e21b3a2a61f9f2659 = L.featureGroup(
+                {}
+            ).addTo(map_87137313f4af6ffa82e58eb4870e5131);
+        
+    
+            var marker_a7a0d1280b957be9c3fd3a6131dfa0c8 = L.marker(
+                [52.65, 1.18],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_ab4772c12a3d06311ce15adef71682ed = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    1\n                \u003c/div\u003e\n            "});
+            marker_a7a0d1280b957be9c3fd3a6131dfa0c8.setIcon(div_icon_ab4772c12a3d06311ce15adef71682ed);
+        
+    
+        var popup_340f8e81292f87a6d93085abc0595c18 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_26c906d5997e4674c4a72fb8bd88828d = $(`<div id="html_26c906d5997e4674c4a72fb8bd88828d" style="width: 100.0%; height: 100.0%;"><b>The Bridge Easton</b><br>Bawburgh Road, Easton, NR9 5EA<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 4–19 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Opened Jan 2023; complex needs/ASC; EHCP; therapy rooms and outdoor spaces.</i></div>`)[0];
+            popup_340f8e81292f87a6d93085abc0595c18.setContent(html_26c906d5997e4674c4a72fb8bd88828d);
+        
+
+        marker_a7a0d1280b957be9c3fd3a6131dfa0c8.bindPopup(popup_340f8e81292f87a6d93085abc0595c18)
+        ;
+
+        
+    
+    
+            marker_a7a0d1280b957be9c3fd3a6131dfa0c8.bindTooltip(
+                `<div>
+                     1 • The Bridge Easton
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_31aae7520b9246c944ff31f5117297f4 = L.marker(
+                [52.468, 1.08],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_141f81587c36392a33102a6a94288302 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    2\n                \u003c/div\u003e\n            "});
+            marker_31aae7520b9246c944ff31f5117297f4.setIcon(div_icon_141f81587c36392a33102a6a94288302);
+        
+    
+        var popup_4e7bddfe5059c033006323808f15fd9f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d7a678e63ca64993b5152b063a469985 = $(`<div id="html_d7a678e63ca64993b5152b063a469985" style="width: 100.0%; height: 100.0%;"><b>Chapel Green School</b><br>Attleborough Road, Old Buckenham, NR17 1RF<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 3–19 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Neuro-diverse pupils; moderate to profound learning needs; health/sensory support.</i></div>`)[0];
+            popup_4e7bddfe5059c033006323808f15fd9f.setContent(html_d7a678e63ca64993b5152b063a469985);
+        
+
+        marker_31aae7520b9246c944ff31f5117297f4.bindPopup(popup_4e7bddfe5059c033006323808f15fd9f)
+        ;
+
+        
+    
+    
+            marker_31aae7520b9246c944ff31f5117297f4.bindTooltip(
+                `<div>
+                     2 • Chapel Green School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_21f3e1fbde28feed16bbba4db36dc749 = L.marker(
+                [52.756, 0.42],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_7d24f643be03f5e2ca42708d46ba751a = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    3\n                \u003c/div\u003e\n            "});
+            marker_21f3e1fbde28feed16bbba4db36dc749.setIcon(div_icon_7d24f643be03f5e2ca42708d46ba751a);
+        
+    
+        var popup_d68f1d91c9423ee85d4edf0bd27596c4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4ecfa688eeb3e069389f6223e0a775db = $(`<div id="html_4ecfa688eeb3e069389f6223e0a775db" style="width: 100.0%; height: 100.0%;"><b>Churchill Park Academy</b><br>Winston Churchill Drive, King's Lynn, PE30 4RP<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 4–19 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Reception–Y14; moderate/severe learning needs; physical/sensory/medical needs; independence focus.</i></div>`)[0];
+            popup_d68f1d91c9423ee85d4edf0bd27596c4.setContent(html_4ecfa688eeb3e069389f6223e0a775db);
+        
+
+        marker_21f3e1fbde28feed16bbba4db36dc749.bindPopup(popup_d68f1d91c9423ee85d4edf0bd27596c4)
+        ;
+
+        
+    
+    
+            marker_21f3e1fbde28feed16bbba4db36dc749.bindTooltip(
+                `<div>
+                     3 • Churchill Park Academy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1028374d20a4e6ff057d93c2344c897b = L.marker(
+                [52.616, 1.26],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_e879a86eaa3343d269a2a080214c7844 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    4\n                \u003c/div\u003e\n            "});
+            marker_1028374d20a4e6ff057d93c2344c897b.setIcon(div_icon_e879a86eaa3343d269a2a080214c7844);
+        
+    
+        var popup_e37609acc0e34edb673821a7a4c7739d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0329bf10c44fb59d63b867502d76a2a1 = $(`<div id="html_0329bf10c44fb59d63b867502d76a2a1" style="width: 100.0%; height: 100.0%;"><b>The Clare School</b><br>South Park Avenue, Norwich, NR4 7AU<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 3–19 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Learning difficulties; physical/medical/sensory needs; therapy & independent living skills.</i></div>`)[0];
+            popup_e37609acc0e34edb673821a7a4c7739d.setContent(html_0329bf10c44fb59d63b867502d76a2a1);
+        
+
+        marker_1028374d20a4e6ff057d93c2344c897b.bindPopup(popup_e37609acc0e34edb673821a7a4c7739d)
+        ;
+
+        
+    
+    
+            marker_1028374d20a4e6ff057d93c2344c897b.bindTooltip(
+                `<div>
+                     4 • The Clare School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c5964642e8e9a42111b389d78687c0d3 = L.marker(
+                [52.683, 0.939],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_d2474464dc5580b07a0a287e53d41f37 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    5\n                \u003c/div\u003e\n            "});
+            marker_c5964642e8e9a42111b389d78687c0d3.setIcon(div_icon_d2474464dc5580b07a0a287e53d41f37);
+        
+    
+        var popup_6016aa14627a15c1bb3881d5eb46cc07 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cbd86bf28ebeed10ba4b2052f476a508 = $(`<div id="html_cbd86bf28ebeed10ba4b2052f476a508" style="width: 100.0%; height: 100.0%;"><b>Fred Nicholson School</b><br>Westfield Road, Dereham, NR19 1JB<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 7–16 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Learning needs; some communication/emotional needs; small autism resource base.</i></div>`)[0];
+            popup_6016aa14627a15c1bb3881d5eb46cc07.setContent(html_cbd86bf28ebeed10ba4b2052f476a508);
+        
+
+        marker_c5964642e8e9a42111b389d78687c0d3.bindPopup(popup_6016aa14627a15c1bb3881d5eb46cc07)
+        ;
+
+        
+    
+    
+            marker_c5964642e8e9a42111b389d78687c0d3.bindTooltip(
+                `<div>
+                     5 • Fred Nicholson School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_769a6efa02fefb23b35b37180c29135c = L.marker(
+                [52.662, 1.302],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_508b095bf86704365ddaf2b194273a1f = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    6\n                \u003c/div\u003e\n            "});
+            marker_769a6efa02fefb23b35b37180c29135c.setIcon(div_icon_508b095bf86704365ddaf2b194273a1f);
+        
+    
+        var popup_2232c87cfe1729b513920c19377be343 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2261b9b10980404f3b104f4d6164f7ee = $(`<div id="html_2261b9b10980404f3b104f4d6164f7ee" style="width: 100.0%; height: 100.0%;"><b>Hall School</b><br>St Faith's Road, Old Catton, Norwich, NR6 7AD<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 3–19 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Severe, profound & multiple learning difficulties; ASC; multi-sensory impairments.</i></div>`)[0];
+            popup_2232c87cfe1729b513920c19377be343.setContent(html_2261b9b10980404f3b104f4d6164f7ee);
+        
+
+        marker_769a6efa02fefb23b35b37180c29135c.bindPopup(popup_2232c87cfe1729b513920c19377be343)
+        ;
+
+        
+    
+    
+            marker_769a6efa02fefb23b35b37180c29135c.bindTooltip(
+                `<div>
+                     6 • Hall School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d77ccbffdfc6b133c207e6f4d88888ee = L.marker(
+                [52.617, 1.29],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_d3ed0392efd4c8964e6e0b09b4fa941d = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    7\n                \u003c/div\u003e\n            "});
+            marker_d77ccbffdfc6b133c207e6f4d88888ee.setIcon(div_icon_d3ed0392efd4c8964e6e0b09b4fa941d);
+        
+    
+        var popup_552f0126870d00924591123bd67737fb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f26692578939cbaf65d4e410017b3a2d = $(`<div id="html_f26692578939cbaf65d4e410017b3a2d" style="width: 100.0%; height: 100.0%;"><b>Harford Manor School</b><br>43 Ipswich Road, Norwich, NR2 2LN<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 3–19 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Severe learning difficulties; many with ASC; additional health/sensory processing needs.</i></div>`)[0];
+            popup_552f0126870d00924591123bd67737fb.setContent(html_f26692578939cbaf65d4e410017b3a2d);
+        
+
+        marker_d77ccbffdfc6b133c207e6f4d88888ee.bindPopup(popup_552f0126870d00924591123bd67737fb)
+        ;
+
+        
+    
+    
+            marker_d77ccbffdfc6b133c207e6f4d88888ee.bindTooltip(
+                `<div>
+                     7 • Harford Manor School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8ac6da0c587f3f3020848892443cfd87 = L.marker(
+                [52.651, 1.728],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_2abe13fab9daf350241776e85087e04c = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    8\n                \u003c/div\u003e\n            "});
+            marker_8ac6da0c587f3f3020848892443cfd87.setIcon(div_icon_2abe13fab9daf350241776e85087e04c);
+        
+    
+        var popup_d5b2604f31afb6b4f75ec27e841d22f7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_40f5602ea0196372f70822d6e53e79b7 = $(`<div id="html_40f5602ea0196372f70822d6e53e79b7" style="width: 100.0%; height: 100.0%;"><b>John Grant School</b><br>St. George's Drive, Caister-on-Sea, Great Yarmouth, NR30 5QW<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 3–19 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Severe learning difficulties; ASC; profound & multiple learning difficulties.</i></div>`)[0];
+            popup_d5b2604f31afb6b4f75ec27e841d22f7.setContent(html_40f5602ea0196372f70822d6e53e79b7);
+        
+
+        marker_8ac6da0c587f3f3020848892443cfd87.bindPopup(popup_d5b2604f31afb6b4f75ec27e841d22f7)
+        ;
+
+        
+    
+    
+            marker_8ac6da0c587f3f3020848892443cfd87.bindTooltip(
+                `<div>
+                     8 • John Grant School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_53997bab829d7969f3bf0bb2494aff03 = L.marker(
+                [52.634, 1.282],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_3c137f7a253b7d2f6f799832631f269c = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    9\n                \u003c/div\u003e\n            "});
+            marker_53997bab829d7969f3bf0bb2494aff03.setIcon(div_icon_3c137f7a253b7d2f6f799832631f269c);
+        
+    
+        var popup_cb9abc7bab6a4644fc588805bdd01abb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_77edb43288ca9042752c892201a6d3d2 = $(`<div id="html_77edb43288ca9042752c892201a6d3d2" style="width: 100.0%; height: 100.0%;"><b>The Parkside School</b><br>College Road, Norwich, NR2 3JA<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 7–16 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Supports learning & cognition needs.</i></div>`)[0];
+            popup_cb9abc7bab6a4644fc588805bdd01abb.setContent(html_77edb43288ca9042752c892201a6d3d2);
+        
+
+        marker_53997bab829d7969f3bf0bb2494aff03.bindPopup(popup_cb9abc7bab6a4644fc588805bdd01abb)
+        ;
+
+        
+    
+    
+            marker_53997bab829d7969f3bf0bb2494aff03.bindTooltip(
+                `<div>
+                     9 • The Parkside School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_18e72ba371cc45b4d4743e2f84df068b = L.marker(
+                [52.618, 1.315],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_96e417cbe91e2916d8d5b94cfd0f3fd3 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    10\n                \u003c/div\u003e\n            "});
+            marker_18e72ba371cc45b4d4743e2f84df068b.setIcon(div_icon_96e417cbe91e2916d8d5b94cfd0f3fd3);
+        
+    
+        var popup_387e7621f3da0fb585136a20c8a0cf06 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_828bb6ddf6a8948c36f94cfea68e8b70 = $(`<div id="html_828bb6ddf6a8948c36f94cfea68e8b70" style="width: 100.0%; height: 100.0%;"><b>Pathways College (Parkside Post-16)</b><br>The Base, The Hewett Academy, Cecil Road, Norwich, NR1 2JT<br><b>Subtype:</b> Post-16 &nbsp;|&nbsp; <b>Age:</b> 16–17 (Y12) &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Part of Parkside post‑16; prepares for FE, employment or training.</i></div>`)[0];
+            popup_387e7621f3da0fb585136a20c8a0cf06.setContent(html_828bb6ddf6a8948c36f94cfea68e8b70);
+        
+
+        marker_18e72ba371cc45b4d4743e2f84df068b.bindPopup(popup_387e7621f3da0fb585136a20c8a0cf06)
+        ;
+
+        
+    
+    
+            marker_18e72ba371cc45b4d4743e2f84df068b.bindTooltip(
+                `<div>
+                     10 • Pathways College (Parkside Post-16)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_653c41f8cd215e699f8b1111a0a8d579 = L.marker(
+                [52.903, 1.33],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_1caba069ff7c1ded12976695e2808674 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    11\n                \u003c/div\u003e\n            "});
+            marker_653c41f8cd215e699f8b1111a0a8d579.setIcon(div_icon_1caba069ff7c1ded12976695e2808674);
+        
+    
+        var popup_b8c5461a90e676756b1191e938ced3ea = L.popup({"maxWidth": "100%"});
+
+        
+            var html_133b9c052d65fb6bba03f702d2f3eef2 = $(`<div id="html_133b9c052d65fb6bba03f702d2f3eef2" style="width: 100.0%; height: 100.0%;"><b>Sidestrand Hall School</b><br>Cromer Road, Sidestrand, Cromer, NR27 0NH<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 7–19 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Wide range of complex needs; vocational areas; charity shop work experience; sixth form accreditation.</i></div>`)[0];
+            popup_b8c5461a90e676756b1191e938ced3ea.setContent(html_133b9c052d65fb6bba03f702d2f3eef2);
+        
+
+        marker_653c41f8cd215e699f8b1111a0a8d579.bindPopup(popup_b8c5461a90e676756b1191e938ced3ea)
+        ;
+
+        
+    
+    
+            marker_653c41f8cd215e699f8b1111a0a8d579.bindTooltip(
+                `<div>
+                     11 • Sidestrand Hall School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_78a9017f2f0c9a6b861a8f4462567498 = L.marker(
+                [52.939, 1.207],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_d735f7e39db728086aea72e456b41940 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    12\n                \u003c/div\u003e\n            "});
+            marker_78a9017f2f0c9a6b861a8f4462567498.setIcon(div_icon_d735f7e39db728086aea72e456b41940);
+        
+    
+        var popup_4dc5f3c6e9d602924b58493548c89c1b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8aa90c9b91cf4134724d55b814bd8ae8 = $(`<div id="html_8aa90c9b91cf4134724d55b814bd8ae8" style="width: 100.0%; height: 100.0%;"><b>Sheringham Woodfields School</b><br>Holt Road, Sheringham, NR26 8ND<br><b>Subtype:</b> Complex Needs &nbsp;|&nbsp; <b>Age:</b> 3–19 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Complex learning & health needs; accessible single-level site; charity shop work experience.</i></div>`)[0];
+            popup_4dc5f3c6e9d602924b58493548c89c1b.setContent(html_8aa90c9b91cf4134724d55b814bd8ae8);
+        
+
+        marker_78a9017f2f0c9a6b861a8f4462567498.bindPopup(popup_4dc5f3c6e9d602924b58493548c89c1b)
+        ;
+
+        
+    
+    
+            marker_78a9017f2f0c9a6b861a8f4462567498.bindTooltip(
+                `<div>
+                     12 • Sheringham Woodfields School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d90824405f1d6b09827b6ddb44dfc50b = L.marker(
+                [52.617, 1.733],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_b01a925bd29131bafded9ce20e64f25f = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    13\n                \u003c/div\u003e\n            "});
+            marker_d90824405f1d6b09827b6ddb44dfc50b.setIcon(div_icon_b01a925bd29131bafded9ce20e64f25f);
+        
+    
+        var popup_291748c297d820ceffeda28de2d47325 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b251f7cbfcb529c5a911d7a8e0f96f01 = $(`<div id="html_b251f7cbfcb529c5a911d7a8e0f96f01" style="width: 100.0%; height: 100.0%;"><b>Bure Park Specialist Academy</b><br>Caister Road, Great Yarmouth, NR30 4AS<br><b>Subtype:</b> SEMH (mainstream curriculum; boarding Y4–8) &nbsp;|&nbsp; <b>Age:</b> 5–16 (Y1–11) &nbsp;|&nbsp; <b>Gender:</b> Boys<br><i>Boys; mainstream access; element of boarding for Years 4–8.</i></div>`)[0];
+            popup_291748c297d820ceffeda28de2d47325.setContent(html_b251f7cbfcb529c5a911d7a8e0f96f01);
+        
+
+        marker_d90824405f1d6b09827b6ddb44dfc50b.bindPopup(popup_291748c297d820ceffeda28de2d47325)
+        ;
+
+        
+    
+    
+            marker_d90824405f1d6b09827b6ddb44dfc50b.bindTooltip(
+                `<div>
+                     13 • Bure Park Specialist Academy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e3c57b023b24e78da457b0fb4db1789c = L.marker(
+                [52.646, 1.121],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_36f1588ac7814a3ab30bf10c682d6dcc = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    14\n                \u003c/div\u003e\n            "});
+            marker_e3c57b023b24e78da457b0fb4db1789c.setIcon(div_icon_36f1588ac7814a3ab30bf10c682d6dcc);
+        
+    
+        var popup_689455bbda97373dd75cabaefc8d1843 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_288d1cc1de8dd8f62be54729b02675aa = $(`<div id="html_288d1cc1de8dd8f62be54729b02675aa" style="width: 100.0%; height: 100.0%;"><b>Earthsea School</b><br>Berrys Lane, Honingham, Norwich, NR9 5AX<br><b>Subtype:</b> SEMH &nbsp;|&nbsp; <b>Age:</b> 5–11 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Therapeutic SEMH approach; supports a wide range of learning difficulties.</i></div>`)[0];
+            popup_689455bbda97373dd75cabaefc8d1843.setContent(html_288d1cc1de8dd8f62be54729b02675aa);
+        
+
+        marker_e3c57b023b24e78da457b0fb4db1789c.bindPopup(popup_689455bbda97373dd75cabaefc8d1843)
+        ;
+
+        
+    
+    
+            marker_e3c57b023b24e78da457b0fb4db1789c.bindTooltip(
+                `<div>
+                     14 • Earthsea School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d9c12f7dc95e3c8398a677bc497134c0 = L.marker(
+                [52.613, 1.253],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_431056e3b85bade3928dbe2b9dd91666 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    15\n                \u003c/div\u003e\n            "});
+            marker_d9c12f7dc95e3c8398a677bc497134c0.setIcon(div_icon_431056e3b85bade3928dbe2b9dd91666);
+        
+    
+        var popup_c8c64054315d751be284fd50121b61b3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_960fc691969fc8bc658621df14f8e858 = $(`<div id="html_960fc691969fc8bc658621df14f8e858" style="width: 100.0%; height: 100.0%;"><b>Eaton Hall Specialist Academy</b><br>Pettus Road, Eaton, Norwich, NR4 7BU<br><b>Subtype:</b> SEMH (boarding element Y4–8) &nbsp;|&nbsp; <b>Age:</b> 7–16 (Y3–11) &nbsp;|&nbsp; <b>Gender:</b> Boys<br><i>Boys; mainstream curriculum access; boarding element Years 4–8.</i></div>`)[0];
+            popup_c8c64054315d751be284fd50121b61b3.setContent(html_960fc691969fc8bc658621df14f8e858);
+        
+
+        marker_d9c12f7dc95e3c8398a677bc497134c0.bindPopup(popup_c8c64054315d751be284fd50121b61b3)
+        ;
+
+        
+    
+    
+            marker_d9c12f7dc95e3c8398a677bc497134c0.bindTooltip(
+                `<div>
+                     15 • Eaton Hall Specialist Academy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ffdb954cdf81ee007561ba171c8be31a = L.marker(
+                [52.754, 0.41],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_117fc700b6af6741d974bdfad6ef67a9 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    16\n                \u003c/div\u003e\n            "});
+            marker_ffdb954cdf81ee007561ba171c8be31a.setIcon(div_icon_117fc700b6af6741d974bdfad6ef67a9);
+        
+    
+        var popup_31abd9b6a8301c0ad19f1d81183dba90 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_74d1d0c167d4de6cbd9ac7053f0d95e9 = $(`<div id="html_74d1d0c167d4de6cbd9ac7053f0d95e9" style="width: 100.0%; height: 100.0%;"><b>Fen Rivers Academy</b><br>School House, Kilhams Way, King's Lynn, PE30 2HU<br><b>Subtype:</b> SEMH &nbsp;|&nbsp; <b>Age:</b> 4–16 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Trauma‑informed; full‑time education (approx. 96 pupils).</i></div>`)[0];
+            popup_31abd9b6a8301c0ad19f1d81183dba90.setContent(html_74d1d0c167d4de6cbd9ac7053f0d95e9);
+        
+
+        marker_ffdb954cdf81ee007561ba171c8be31a.bindPopup(popup_31abd9b6a8301c0ad19f1d81183dba90)
+        ;
+
+        
+    
+    
+            marker_ffdb954cdf81ee007561ba171c8be31a.bindTooltip(
+                `<div>
+                     16 • Fen Rivers Academy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ab0f1ce0b3deed7bb556ce990aa8ee54 = L.marker(
+                [52.414, 0.75],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_ee02c064acd64bbe0c66917b46704cdb = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    17\n                \u003c/div\u003e\n            "});
+            marker_ab0f1ce0b3deed7bb556ce990aa8ee54.setIcon(div_icon_ee02c064acd64bbe0c66917b46704cdb);
+        
+    
+        var popup_6a8625a539ae245000b2887b856b0412 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6cfedc6a323f3f8db1da2dca84c4c252 = $(`<div id="html_6cfedc6a323f3f8db1da2dca84c4c252" style="width: 100.0%; height: 100.0%;"><b>The Pinetree School</b><br>Staniforth Road, Thetford, IP24 3LH<br><b>Subtype:</b> SEMH &nbsp;|&nbsp; <b>Age:</b> 11–16 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>SEMH; GCSEs and transition to college; admits Norfolk & Suffolk.</i></div>`)[0];
+            popup_6a8625a539ae245000b2887b856b0412.setContent(html_6cfedc6a323f3f8db1da2dca84c4c252);
+        
+
+        marker_ab0f1ce0b3deed7bb556ce990aa8ee54.bindPopup(popup_6a8625a539ae245000b2887b856b0412)
+        ;
+
+        
+    
+    
+            marker_ab0f1ce0b3deed7bb556ce990aa8ee54.bindTooltip(
+                `<div>
+                     17 • The Pinetree School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d92061c2d0ce063f1b809e1948810442 = L.marker(
+                [52.617, 1.305],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_835e3372e2a2dffccea5d8d6d1d111f2 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    18\n                \u003c/div\u003e\n            "});
+            marker_d92061c2d0ce063f1b809e1948810442.setIcon(div_icon_835e3372e2a2dffccea5d8d6d1d111f2);
+        
+    
+        var popup_93f4a344958886b4b12970bfd440e0e1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f1c717a5fc4d207b055acd1bd3cfdde1 = $(`<div id="html_f1c717a5fc4d207b055acd1bd3cfdde1" style="width: 100.0%; height: 100.0%;"><b>The Wherry School</b><br>280 Hall Road, Norwich, NR1 2GB<br><b>Subtype:</b> Autism (ASC) &nbsp;|&nbsp; <b>Age:</b> 4–17 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>ASC; pupils expected to manage a mainstream curriculum.</i></div>`)[0];
+            popup_93f4a344958886b4b12970bfd440e0e1.setContent(html_f1c717a5fc4d207b055acd1bd3cfdde1);
+        
+
+        marker_d92061c2d0ce063f1b809e1948810442.bindPopup(popup_93f4a344958886b4b12970bfd440e0e1)
+        ;
+
+        
+    
+    
+            marker_d92061c2d0ce063f1b809e1948810442.bindTooltip(
+                `<div>
+                     18 • The Wherry School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3f0bf51edb00337e4109f03bfd49f860 = L.marker(
+                [52.837, 0.85],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_425e8c911c35d38fb34c8cd63493abd1 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    19\n                \u003c/div\u003e\n            "});
+            marker_3f0bf51edb00337e4109f03bfd49f860.setIcon(div_icon_425e8c911c35d38fb34c8cd63493abd1);
+        
+    
+        var popup_c14759eb7aa6ca558110c2601117224f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b830a27dbcebfcb12a80bf34cf40c484 = $(`<div id="html_b830a27dbcebfcb12a80bf34cf40c484" style="width: 100.0%; height: 100.0%;"><b>Duke of Lancaster Academy</b><br>Highfield Road, Fakenham, NR21 9DQ<br><b>Subtype:</b> Autism & Social Communication &nbsp;|&nbsp; <b>Age:</b> 5–16 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Opened Jan 2022; ASC/social communication; mainstream curriculum expectation.</i></div>`)[0];
+            popup_c14759eb7aa6ca558110c2601117224f.setContent(html_b830a27dbcebfcb12a80bf34cf40c484);
+        
+
+        marker_3f0bf51edb00337e4109f03bfd49f860.bindPopup(popup_c14759eb7aa6ca558110c2601117224f)
+        ;
+
+        
+    
+    
+            marker_3f0bf51edb00337e4109f03bfd49f860.bindTooltip(
+                `<div>
+                     19 • Duke of Lancaster Academy
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ebb9b9994428e71d9b2b3f5b154a9fde = L.marker(
+                [52.475, 0.983],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_9aac9da8c786c0506447a967f44e3f5d = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    20\n                \u003c/div\u003e\n            "});
+            marker_ebb9b9994428e71d9b2b3f5b154a9fde.setIcon(div_icon_9aac9da8c786c0506447a967f44e3f5d);
+        
+    
+        var popup_64eb97a0ea2dd2c72a412969b09b7cad = L.popup({"maxWidth": "100%"});
+
+        
+            var html_47e5cde85b6a806a86e6cfed7d87c58d = $(`<div id="html_47e5cde85b6a806a86e6cfed7d87c58d" style="width: 100.0%; height: 100.0%;"><b>Aurora White House School</b><br>Quidenham, Norwich, Norfolk, NR16 2NZ<br><b>Subtype:</b> Independent Special (Autism & SEN) &nbsp;|&nbsp; <b>Age:</b> 6–16 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Independent special school; autism & SEN focus.</i></div>`)[0];
+            popup_64eb97a0ea2dd2c72a412969b09b7cad.setContent(html_47e5cde85b6a806a86e6cfed7d87c58d);
+        
+
+        marker_ebb9b9994428e71d9b2b3f5b154a9fde.bindPopup(popup_64eb97a0ea2dd2c72a412969b09b7cad)
+        ;
+
+        
+    
+    
+            marker_ebb9b9994428e71d9b2b3f5b154a9fde.bindTooltip(
+                `<div>
+                     20 • Aurora White House School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_10c6e9aae02e822fad3b1a2c1b87d068 = L.marker(
+                [52.457, 1.041],
+                {}
+            ).addTo(feature_group_eb12434fb073850e21b3a2a61f9f2659);
+        
+    
+            var div_icon_04cc254f3f4a5c1aa35625b0620bc797 = L.divIcon({"className": "empty", "html": "\n                \u003cdiv style=\"font-size:12px;color:white;background-color:blue;border-radius:50%;\n                            text-align:center;width:22px;height:22px;line-height:22px;border:1px solid #006;\"\u003e\n                    21\n                \u003c/div\u003e\n            "});
+            marker_10c6e9aae02e822fad3b1a2c1b87d068.setIcon(div_icon_04cc254f3f4a5c1aa35625b0620bc797);
+        
+    
+        var popup_f6bcc017bc5159b56a1706b31f78a006 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0295866561f7561cc86b5ba0dd584759 = $(`<div id="html_0295866561f7561cc86b5ba0dd584759" style="width: 100.0%; height: 100.0%;"><b>Acorn Park School</b><br>Andrew's Furlong, Mill Road, Banham, Norwich, NR16 2HU<br><b>Subtype:</b> Independent SEN (Autism) &nbsp;|&nbsp; <b>Age:</b> 4–19 &nbsp;|&nbsp; <b>Gender:</b> Mixed<br><i>Independent autism specialist school (4–19).</i></div>`)[0];
+            popup_f6bcc017bc5159b56a1706b31f78a006.setContent(html_0295866561f7561cc86b5ba0dd584759);
+        
+
+        marker_10c6e9aae02e822fad3b1a2c1b87d068.bindPopup(popup_f6bcc017bc5159b56a1706b31f78a006)
+        ;
+
+        
+    
+    
+            marker_10c6e9aae02e822fad3b1a2c1b87d068.bindTooltip(
+                `<div>
+                     21 • Acorn Park School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_4fbd93dcd76762fda9c2f012ebadf6fd = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_07594deb928c23c3ba4f90eb320ee5b6,
+                },
+                overlays :  {
+                    "Federation Schools (Green F1\u2013F5)" : feature_group_de75de45f540ef3f9651aaace2b98ea3,
+                    "Special \u0026 Complex Needs (Blue 1\u2013n)" : feature_group_eb12434fb073850e21b3a2a61f9f2659,
+                },
+            };
+            L.control.layers(
+                layer_control_4fbd93dcd76762fda9c2f012ebadf6fd.base_layers,
+                layer_control_4fbd93dcd76762fda9c2f012ebadf6fd.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_87137313f4af6ffa82e58eb4870e5131);
+        
+</script>
+</html>
